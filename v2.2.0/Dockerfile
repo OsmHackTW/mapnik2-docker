@@ -1,11 +1,5 @@
-FROM ubuntu:trusty
-
+FROM osmtw/ubuntu:trusty
 MAINTAINER Rex Tsai <rex.cc.tsai@gmail.com>
-
-ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update \
-        && apt-get dist-upgrade -y \
-        && apt-get install -y vim
 
 ENV MAPNIK_VERSION=2.2.0+ds1-6build2 \
     PYTHON_MAPNIK_VERSION=2.2.0+ds1-6build2
@@ -15,7 +9,7 @@ RUN apt-get install -y \
             libmapnik2.2=${MAPNIK_VERSION} \
             libmapnik-dev=${MAPNIK_VERSION} \
             mapnik-utils=${MAPNIK_VERSION} \
-            python-mapnik=${PYTHON_MAPNIK_VERSION} \
+            python-mapnik2=${PYTHON_MAPNIK_VERSION} \
  && python -c 'import mapnik'
 
 # Install Cascadenik
