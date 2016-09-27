@@ -1,5 +1,4 @@
-# docker iamge for mapnik2
-
+# Docker image of mapnik2
 
 Includes
 * Cascadenik
