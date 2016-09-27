@@ -20,7 +20,14 @@ RUN apt-get install -y git python-cssutils python-imaging \
  && cd - \
  && rm -r Cascadenik
 
+# Install nik2img
+RUN apt-get install -y python-setuptools \
+ && easy_install -U nik2img
+
+
 # Clean up APT when done
 RUN apt-get autoremove -y --purge build-essential \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+WORKDIR /build
